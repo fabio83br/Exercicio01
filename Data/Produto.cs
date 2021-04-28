@@ -12,3 +12,4 @@ namespace Exercicio.Data
         public decimal Preco { get; set; }
     }
 }
+     

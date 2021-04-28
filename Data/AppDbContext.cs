@@ -17,9 +17,20 @@ namespace Exercicio.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Produto>()
-                
+                .Property(p => p.Nome)
+                .HasMaxLength(40);
+
+            modelBuilder.Entity<Produto>()
+                .Property(p => p.Preco)
+                .HasPrecision(10, 2);
+
+            modelBuilder.Entity<Produto>().HasData(
+                new Produto { Id = 1, Nome = "Caneta", Preco = 12m }
+
+                );
+
         }
-        
+
     }
 
 
